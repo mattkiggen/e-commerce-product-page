@@ -4,6 +4,7 @@ import styles from '../styles/Navbar.module.scss';
 import MenuIcon from './MenuIcon';
 import CartIcon from './CartIcon';
 import Avatar from './Avatar';
+import SidebarMenu from './SidebarMenu';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,15 @@ export default function Navbar() {
             <MenuIcon isOpen={isOpen} />
           </button>
           <Logo />
+          <div className={styles.desktopMenu}>
+            {menuItems.map((i) => {
+              return (
+                <a key={i.key} href={i.href}>
+                  {i.name}
+                </a>
+              );
+            })}
+          </div>
         </div>
         <div className={styles.right}>
           <button>
@@ -35,17 +45,7 @@ export default function Navbar() {
             alt='Picture of me'
           />
         </div>
-        {isOpen && (
-          <div className={styles.sidebar}>
-            {menuItems.map((i) => {
-              return (
-                <a key={i.name} href={i.href}>
-                  {i.name}
-                </a>
-              );
-            })}
-          </div>
-        )}
+        {isOpen && <SidebarMenu items={menuItems} />}
       </nav>
     </header>
   );
