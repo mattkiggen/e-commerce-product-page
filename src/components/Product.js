@@ -1,15 +1,20 @@
+import { useState } from 'react';
 import styles from '../styles/Product.module.scss';
 import AddToCart from './AddToCart';
+import Carousel from './Carousel';
 
 export default function Product() {
+  const images = [
+    '/images/image-product-1.jpg',
+    '/images/image-product-2.jpg',
+    '/images/image-product-3.jpg',
+    '/images/image-product-4.jpg',
+  ];
+
   return (
     <main className={styles.product}>
       <div className={styles.details}>
-        <img
-          src='/images/image-product-1.jpg'
-          alt='Sneaker'
-          className={styles.featuredImage}
-        />
+        <Carousel images={images} />
         <div className={styles.content}>
           <p className={styles.brand}>Sneaker Company</p>
           <h1>Fall Limited Edition Sneakers</h1>
