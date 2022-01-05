@@ -2,30 +2,48 @@
 @import './variables.scss';
 
 .carousel {
-  max-width: 100%;
+  width: 100%;
 
   .featured {
-    max-width: 100%;
+    width: 100%;
+    height: 50rem;
+    object-fit: cover;
 
     @include atDesktop {
-      width: 50rem;
       border-radius: 2rem;
     }
   }
 
   .preview {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    gap: 2rem;
-    margin-top: 2rem;
+    display: none;
+
+    @include atDesktop {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.8rem;
+    }
 
     .thumbnail {
-      max-width: 100%;
-      border-radius: 2rem;
+      position: relative;
+      width: 11rem;
+      height: 11rem;
+      border-radius: 1.5rem;
+      background-size: cover;
+      cursor: pointer;
     }
 
     .selected {
-      border: 2px solid $orange;
+      &::before {
+        border: 2px solid $orange;
+        content: '';
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        border-radius: 1.5rem;
+        background-color: hsla(25, 100%, 94%, 0.7);
+      }
     }
   }
 }

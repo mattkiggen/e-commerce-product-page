@@ -12,14 +12,17 @@
   .details {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 4rem;
     align-items: center;
+    justify-content: space-between;
 
     @include atDesktop {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 50%);
     }
 
     .content {
       padding: 4rem;
+      padding-top: 0;
 
       .brand {
         color: $orange;

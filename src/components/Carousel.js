@@ -14,9 +14,9 @@ export default function Carousel({ images }) {
       <div className={styles.preview}>
         {images.map((image, index) => {
           return (
-            <img
+            <div
               key={image}
-              src={image}
+              style={{ backgroundImage: `url(${image})` }}
               alt='Product image'
               className={
                 images.indexOf(current) === index
