@@ -1,5 +1,92 @@
+@import './mixins.scss';
+@import './variables.scss';
+
 .product {
+  max-width: $maxWidth;
+  margin: 0 auto;
+
+  @include atDesktop {
+    margin-top: 8rem;
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+
+    @include atDesktop {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .brand {
+      color: $orange;
+      font-size: $baseFontSize;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+
+    h1 {
+      font-size: 3.6rem;
+      color: $veryDarkBlue;
+    }
+
+    .description {
+      line-height: 1.8;
+      color: $darkGrayishBlue;
+    }
+
+    .priceInfo {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include atDesktop {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+
+        .price {
+          font-size: 3.6rem;
+          font-weight: 700;
+          color: $veryDarkBlue;
+          margin-right: 2rem;
+        }
+
+        .discount {
+          background: $paleOrange;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          color: $orange;
+          font-size: 2rem;
+          font-weight: 700;
+        }
+      }
+
+      .originalPrice {
+        text-decoration: line-through;
+        font-size: 2rem;
+        font-weight: 700;
+        color: $grayishBlue;
+
+        @include atDesktop {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+
   .featuredImage {
     width: 100%;
+
+    @include atDesktop {
+      width: 50rem;
+      border-radius: 2rem;
+    }
   }
 }
