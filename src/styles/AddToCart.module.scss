@@ -1,0 +1,83 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.addToCart {
+  display: flex;
+  flex-direction: column;
+
+  @include atDesktop {
+    flex-direction: row;
+    margin-top: 4rem;
+  }
+
+  .quantityInfo {
+    position: relative;
+    margin: 2rem 0;
+
+    @include atDesktop {
+      margin: 0;
+      margin-right: 2rem;
+      width: 20rem;
+    }
+
+    input[type='number'] {
+      border: 0;
+      background: $lightGrayishBlue;
+      padding: 1.8rem;
+      border-radius: 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.8rem;
+      width: 100%;
+
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      @include atDesktop {
+        width: 20rem;
+      }
+    }
+
+    .minus,
+    .plus {
+      border: 0;
+      background: none;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    .minus {
+      top: calc(50% - 1.2rem);
+      left: 2rem;
+    }
+
+    .plus {
+      top: calc(50% - 0.8rem);
+      right: 2rem;
+    }
+  }
+
+  .btn {
+    border: 0;
+    border-radius: 1rem;
+    padding: 1.8rem;
+    background: $orange;
+    color: $white;
+    font-weight: 700;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: hsla(26, 100%, 55%, 0.15) 0px 48px 100px 0px;
+
+    svg {
+      margin-right: 2rem;
+    }
+
+    @include atDesktop {
+      width: 100%;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import styles from '../styles/Product.module.scss';
+import AddToCart from './AddToCart';
 
 export default function Product() {
   return (
@@ -24,6 +25,7 @@ export default function Product() {
             </div>
             <p className={styles.originalPrice}>$250.00</p>
           </div>
+          <AddToCart />
         </div>
       </div>
     </main>
