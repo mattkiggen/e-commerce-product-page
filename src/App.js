@@ -1,10 +1,11 @@
 import Navbar from './components/Navbar';
+import Product from './components/Product';
 
 function App() {
   return (
     <>
       <Navbar />
-      <h1>Hello World!</h1>
+      <Product />
     </>
   );
 }
