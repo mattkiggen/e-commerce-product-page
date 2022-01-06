@@ -49,9 +49,14 @@
             margin-left: 2rem;
             text-decoration: none;
             color: $veryDarkBlue;
+            height: 100%;
 
             &:first-child {
               margin-left: 6rem;
+            }
+
+            &:hover {
+              border-bottom: 0.2rem solid $orange;
             }
           }
         }
@@ -65,6 +70,12 @@
       img {
         width: 3rem;
         margin-left: 2rem;
+        border-radius: 100%;
+        transition: 0.3s box-shadow ease-in-out;
+
+        &:hover {
+          box-shadow: 0 0 0 3px $orange;
+        }
 
         @include atDesktop {
           width: 5rem;

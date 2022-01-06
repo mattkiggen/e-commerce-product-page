@@ -34,7 +34,7 @@
 
     .selected {
       &::before {
-        border: 2px solid $orange;
+        border: 0.2rem solid $orange;
         content: '';
         position: absolute;
         top: 0px;
