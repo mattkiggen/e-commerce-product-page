@@ -8,6 +8,24 @@ export default function Carousel({ images }) {
     setCurrent(images[index]);
   };
 
+  const handleNextImage = () => {
+    const currentIndex = images.indexOf(current);
+    const nextImg = images[currentIndex + 1];
+
+    if (nextImg === undefined) return;
+
+    setCurrent(nextImg);
+  };
+
+  const handlePrevImage = () => {
+    const currentIndex = images.indexOf(current);
+    const prevImg = images[currentIndex - 1];
+
+    if (prevImg === undefined) return;
+
+    setCurrent(prevImg);
+  };
+
   return (
     <div className={styles.carousel}>
       <img src={current} alt='Product image' className={styles.featured} />
@@ -27,6 +45,30 @@ export default function Carousel({ images }) {
             />
           );
         })}
+      </div>
+      <div className={styles.controls}>
+        <button onClick={handlePrevImage}>
+          <svg width='12' height='18' xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='M11 1 3 9l8 8'
+              stroke='#1D2026'
+              stroke-width='3'
+              fill='none'
+              fill-rule='evenodd'
+            />
+          </svg>
+        </button>
+        <button onClick={handleNextImage}>
+          <svg width='13' height='18' xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='m2 1 8 8-8 8'
+              stroke='#1D2026'
+              stroke-width='3'
+              fill='none'
+              fill-rule='evenodd'
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );

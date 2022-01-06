@@ -3,6 +3,7 @@
 
 .carousel {
   width: 100%;
+  position: relative;
 
   .featured {
     width: 100%;
@@ -43,6 +44,37 @@
         left: 0px;
         border-radius: 1.5rem;
         background-color: hsla(25, 100%, 94%, 0.7);
+      }
+    }
+  }
+
+  .controls {
+    position: absolute;
+    top: calc(50% - 5rem);
+    left: 0;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include atDesktop {
+      display: none;
+    }
+
+    button {
+      background: #fff;
+      border: 0;
+      border-radius: 100%;
+      height: 5rem;
+      width: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      svg {
+        margin-left: -0.05rem;
       }
     }
   }
