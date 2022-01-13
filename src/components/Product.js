@@ -1,14 +1,13 @@
-import { useState } from 'react';
 import styles from '../styles/Product.module.scss';
 import AddToCart from './AddToCart';
 import Carousel from './Carousel';
 
 export default function Product() {
   const images = [
-    '/images/image-product-1.jpg',
-    '/images/image-product-2.jpg',
-    '/images/image-product-3.jpg',
-    '/images/image-product-4.jpg',
+    { src: '/images/image-product-1.jpg', alt: 'some alt text 1' },
+    { src: '/images/image-product-2.jpg', alt: 'some alt text 2' },
+    { src: '/images/image-product-3.jpg', alt: 'some alt text 3' },
+    { src: '/images/image-product-4.jpg', alt: 'some alt text 4' },
   ];
 
   return (

@@ -8,34 +8,30 @@ export default function Carousel({ images }) {
     setCurrent(images[index]);
   };
 
-  const handleNextImage = () => {
+  const handleNextImage = (type) => {
     const currentIndex = images.indexOf(current);
-    const nextImg = images[currentIndex + 1];
+
+    let nextImg;
+    if (type === 'next') {
+      nextImg = images[currentIndex + 1];
+    } else {
+      nextImg = images[currentIndex - 1];
+    }
 
     if (nextImg === undefined) return;
 
     setCurrent(nextImg);
   };
 
-  const handlePrevImage = () => {
-    const currentIndex = images.indexOf(current);
-    const prevImg = images[currentIndex - 1];
-
-    if (prevImg === undefined) return;
-
-    setCurrent(prevImg);
-  };
-
   return (
     <div className={styles.carousel}>
-      <img src={current} alt='Product image' className={styles.featured} />
+      <img src={current.src} alt={current.alt} className={styles.featured} />
       <div className={styles.preview}>
         {images.map((image, index) => {
           return (
             <div
               key={image}
-              style={{ backgroundImage: `url(${image})` }}
-              alt='Product image'
+              style={{ backgroundImage: `url(${image.src})` }}
               className={
                 images.indexOf(current) === index
                   ? styles.thumbnail + ' ' + styles.selected
@@ -47,7 +43,7 @@ export default function Carousel({ images }) {
         })}
       </div>
       <div className={styles.controls}>
-        <button onClick={handlePrevImage}>
+        <button onClick={() => handleNextImage('prev')}>
           <svg width='12' height='18' xmlns='http://www.w3.org/2000/svg'>
             <path
               d='M11 1 3 9l8 8'
@@ -58,7 +54,7 @@ export default function Carousel({ images }) {
             />
           </svg>
         </button>
-        <button onClick={handleNextImage}>
+        <button onClick={() => handleNextImage('next')}>
           <svg width='13' height='18' xmlns='http://www.w3.org/2000/svg'>
             <path
               d='m2 1 8 8-8 8'
