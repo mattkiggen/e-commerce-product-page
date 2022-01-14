@@ -8,11 +8,11 @@ export default function Carousel({ images }) {
     setCurrent(images[index]);
   };
 
-  const handleNextImage = (type) => {
+  const handleNextImage = (TYPE) => {
     const currentIndex = images.indexOf(current);
 
     let nextImg;
-    if (type === 'next') {
+    if (TYPE === 'NEXT') {
       nextImg = images[currentIndex + 1];
     } else {
       nextImg = images[currentIndex - 1];
@@ -43,7 +43,7 @@ export default function Carousel({ images }) {
         })}
       </div>
       <div className={styles.controls}>
-        <button onClick={() => handleNextImage('prev')}>
+        <button onClick={() => handleNextImage('PREV')}>
           <svg width='12' height='18' xmlns='http://www.w3.org/2000/svg'>
             <path
               d='M11 1 3 9l8 8'
@@ -54,7 +54,7 @@ export default function Carousel({ images }) {
             />
           </svg>
         </button>
-        <button onClick={() => handleNextImage('next')}>
+        <button onClick={() => handleNextImage('NEXT')}>
           <svg width='13' height='18' xmlns='http://www.w3.org/2000/svg'>
             <path
               d='m2 1 8 8-8 8'

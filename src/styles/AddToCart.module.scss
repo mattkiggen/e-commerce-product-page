@@ -29,6 +29,7 @@
       font-weight: 700;
       font-size: 1.8rem;
       width: 100%;
+      -moz-appearance: textfield; /*For FireFox*/
 
       &::-webkit-inner-spin-button {
         -webkit-appearance: none;
