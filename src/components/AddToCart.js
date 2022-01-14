@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CartIcon from './CartIcon';
+import CartIcon from './icons/CartIcon';
 import styles from '../styles/AddToCart.module.scss';
 
 export default function AddToCart() {

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Logo from './Logo';
 import styles from '../styles/Navbar.module.scss';
-import MenuIcon from './MenuIcon';
-import CartIcon from './CartIcon';
+import MenuIcon from './icons/MenuIcon';
 import Avatar from './Avatar';
 import SidebarMenu from './SidebarMenu';
+import ShoppingCart from './ShoppingCart';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,9 +36,7 @@ export default function Navbar() {
           </div>
         </div>
         <div className={styles.right}>
-          <button>
-            <CartIcon />
-          </button>
+          <ShoppingCart />
           <Avatar
             href='/#'
             imageSrc='/images/image-avatar.png'
